@@ -4,6 +4,7 @@ const processingTask = async (job) => {
     console.log('Processing task:', job.data);
     await new Promise(resolve => setTimeout(resolve, 3000));
     console.log('Task completed:', job.data);
+    await job.done()
 }
 
 export const redisOptions = { host: "localhost", port: 6379 };
