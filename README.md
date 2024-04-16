@@ -1,3 +1,7 @@
+## Architecture overview
+
+<img style="border-radius: 10px" src="./assets/mq.png" />
+
 1. Fire up the docker compose using 
    ```
    docker-compose up
@@ -11,5 +15,6 @@
    ```
    {"taskData": "post processing"}
    ```
+   - For request with auto userId and priority, check the `pre-req.js`
 4. Check your Redis if task has been queued or not ( can use redisinsight )
 5. Run the worker.js & see the task being processed

@@ -1,10 +1,11 @@
 import { Worker } from 'bullmq';
 
 const processingTask = async (job) => {
-    console.log('Processing task no:', job.data.counter, ' id: ', job.data.id);
+    console.log('Processing task no:', job.data.userId, ' filename: ', job.data.id);
     await new Promise(resolve => setTimeout(resolve, 3000));
-    console.log('Task completed:', job.data.counter, '\n------');
-    await job.remove()
+    console.log('Upload to s3 and notify user, Done', job.data.userId, '\n------'); // implement uploading to cloud and emailing user
+    console.log('Task completed:', job.data.userId, '\n------');
+    // await job.remove()
 }
 
 export const redisOptions = { host: "localhost", port: 6379 };
